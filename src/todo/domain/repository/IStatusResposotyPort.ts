@@ -8,4 +8,5 @@ export interface IStatusRepositoryPort extends ICommonsCRUD<
   number
 > {
   findAll(): Promise<StatusModel[]>;
+  getStatusByName(name: string): Promise<StatusModel | null>;
 }

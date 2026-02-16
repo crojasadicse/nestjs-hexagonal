@@ -1,9 +1,7 @@
-import { Injectable } from "src/todo/shared/dependency-inyection/injectable";
 import { IStatusUseCasePort } from "../ports/StatusUseCasePort";
 
 import { StatusModel } from "src/todo/domain/models/status";
 import { IStatusRepositoryPort } from "src/todo/domain/repository/IStatusResposotyPort";
-
 
 
 export class StatusUseCaseService implements IStatusUseCasePort {
@@ -12,8 +10,8 @@ export class StatusUseCaseService implements IStatusUseCasePort {
   }
 
 
-  async getStatusByName(name: string): Promise<String | null> {
-    return "Test" ;
+  async getStatusByName(name: string): Promise<StatusModel | null> {
+    return this.statusRepository.getStatusByName(name);
   }
 
   findAll(): Promise<StatusModel[]> {

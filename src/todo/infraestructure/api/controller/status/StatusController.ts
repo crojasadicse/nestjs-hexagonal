@@ -5,13 +5,8 @@ import { StatusUseCaseService } from "src/todo/application/useCase/status/servic
 @Controller('/status')
 export class StatusController {
 
- 
-    constructor(private readonly statusUseCaseService: StatusUseCaseService) {
-        
-    }
+   constructor(private readonly statusUseCaseService: StatusUseCaseService) {}
    
-
-
    @Get('')
    getStatusByName() {
     console.log("entro al controller");
